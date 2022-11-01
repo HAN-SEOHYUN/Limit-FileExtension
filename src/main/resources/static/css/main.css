@@ -1,0 +1,16 @@
+.content-wrapper {
+    width: 1000px;
+    height: auto;
+}
+
+.content-body>div {
+    display: flex;
+}
+
+.label {
+    width: 200px;
+}
+
+.content-body div {
+    font-size: 20px;
+}

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>과제_한서현</title>
+    <meta charset="UTF-8">
+    <!--jquery-->
+    <script th:src="@{/js/jquery-3.3.1.min.js}" type="text/javascript" text="javascript"></script>
+    <script th:src="@{/js/jquery-ui.min.js}" type="text/javascript" text="javascript"></script>
+</head>
+<body>
+<div class="content-wrapper">
+    <hr>
+    <div class="content-top">
+        <div class="title-div"><h1>파일 확장자 차단</h1></div>
+        <hr>
+    </div>
+    <div class="content-body">
+        <h2>파일확장자에 따라 특정 형식의 파일을 첨부하거나 전송하지 못하도록 제한</h2>
+        <div class="fix-extension-div">
+            <div class="label">고정확장자</div>
+            <div class="fix-list-div">
+                <label><input type="checkbox" name="temp">bat</label>
+            </div>
+        </div>
+        <div class="custom-extension-div">
+            <div class="label">커스텀 확장자</div>
+            <div class="about-custom-div">
+                <div class="about-custom-input"><input type="text"><input type="button" value="+추가"></div>
+                <div class="about-custom-list"><textarea class="custom-list-ta"></textarea></div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>
