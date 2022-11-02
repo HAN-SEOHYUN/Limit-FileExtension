@@ -38,4 +38,11 @@ public class ExtensionController {
         model.addAttribute("customList",map.get(ExtensionType.CUSTOM));
         return "index :: #custom-list";
     }
+
+    //커스텀확장자 DELETE API
+    @GetMapping(value ="/custom/delete/{id}")
+    public String custom_Extension_delete(@PathVariable ("id") Long id){
+        fileExtensionService.delete_custom_extension(id);
+        return "redirect:/";
+    }
 }

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
-    <title>과제_한서현</title>
+    <title>서버개발자 과제테스트_한서현</title>
     <meta charset="UTF-8">
     <!--jquery-->
     <script th:src="@{/js/jquery-3.3.1.min.js}" type="text/javascript" text="javascript"></script>
@@ -46,7 +46,8 @@
                             <th:block th:each="custom : ${customList}">
                                 <div class="custom-each-div">
                                     <span th:text="${custom.getName()}" th:value="${custom.getId()}"></span>
-                                    <a href="#"><i class="fa-solid fa-x"></i></a>
+                                    <a th:href="@{'/extension/custom/delete/'+${custom.getId()}}" id='delBtn' th:onclick ="return confirm('삭제하시겠습니까 ?');">
+                                        <i class="fa-solid fa-x"></i></a>
                                 </div>
                             </th:block>
                         </div>

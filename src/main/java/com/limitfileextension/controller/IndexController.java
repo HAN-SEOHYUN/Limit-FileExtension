@@ -19,7 +19,7 @@ public class IndexController {
 
     private final FileExtensionService fileExtensionService;
 
-    //INDEX : 확장자 정보 조회 API
+    //INDEX : 저장된 확장자정보 조회 API
     @GetMapping("/")
     public String index(Model model){
        HashMap<ExtensionType, List<ResponseDto>> map = fileExtensionService.limited_Extensions();

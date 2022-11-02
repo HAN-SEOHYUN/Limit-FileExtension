@@ -56,4 +56,10 @@ public class FileExtensionService {
         map.put(ExtensionType.CUSTOM,customList);
         return map;
     }
+
+    @Transactional
+    public void delete_custom_extension(Long id){
+        fileExtensionRepository.deleteById(id);
+    }
+
 }

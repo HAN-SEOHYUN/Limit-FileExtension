@@ -8,5 +8,6 @@ public interface FileExtensionRepository extends JpaRepository<FileExtension,Lon
     FileExtension findByName(String name);
     List<FileExtension> findByType(String type);
 
-
+    @Override
+    void deleteById(Long id);
 }
