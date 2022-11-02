@@ -1,7 +1,6 @@
 package com.limitfileextension.controller;
 
 import com.limitfileextension.domain.ExtensionType;
-import com.limitfileextension.dto.RequestDto;
 import com.limitfileextension.dto.ResponseDto;
 import com.limitfileextension.service.FileExtensionService;
 import lombok.RequiredArgsConstructor;
@@ -20,6 +19,7 @@ public class IndexController {
 
     private final FileExtensionService fileExtensionService;
 
+    //INDEX : 확장자 정보 조회 API
     @GetMapping("/")
     public String index(Model model){
        HashMap<ExtensionType, List<ResponseDto>> map = fileExtensionService.limited_Extensions();

@@ -20,13 +20,17 @@ import java.util.Map;
 public class ExtensionController {
     private final FileExtensionService fileExtensionService;
 
+    //고정확장자 업데이트 API
     @RequestMapping(value = "/fix/update", method = {RequestMethod.POST})
-    public void fix_Extension_save(@RequestParam Map<String, Object> param){
-
-
-
+    public String fix_Extension_save(@RequestParam Map<String, Object> param,Model model){
+        boolean isSelected = (param.get("isChecked").toString().equals("true")) ;
+        fileExtensionService.update_Fix_Extension((long) Integer.parseInt(param.get("id").toString()), isSelected);
+        HashMap<ExtensionType, List<ResponseDto>> map = fileExtensionService.limited_Extensions();
+        model.addAttribute("fixList",map.get(ExtensionType.FIX));
+        return "index :: #fix-list";
     }
 
+    //커스텀확장자 SAVE API
     @RequestMapping(value = "/custom/save", method = {RequestMethod.POST})
     public String custom_Extension_save(Model model, @RequestParam Map<String, Object> param){
         fileExtensionService.save_Custom_Extension(param.get("name").toString());
