@@ -5,10 +5,7 @@ import com.limitfileextension.domain.FileExtensionRepository;
 import com.limitfileextension.dto.ResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Sort;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
@@ -52,6 +49,14 @@ public class FileExtensionService {
             }
         }
         return true;
+    }
+
+    //등록된 커스텀 확장자가 200개 이상이면
+    //false 를 반환하는 메서드
+    @Transactional
+    public boolean check_total_custom(){
+        HashMap<ExtensionType, List<ResponseDto>> listHashMap = limited_Extensions();
+        return listHashMap.get(ExtensionType.CUSTOM).size() <= 200;
     }
 
 

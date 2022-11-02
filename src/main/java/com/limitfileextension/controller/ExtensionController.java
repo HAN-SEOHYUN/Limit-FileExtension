@@ -37,7 +37,7 @@ public class ExtensionController {
     public String custom_Extension_save(Model model, @RequestParam Map<String, Object> param){
         String name = param.get("name").toString();
 
-        if(!fileExtensionService.exist_check_inFixList(name)){
+        if(!fileExtensionService.exist_check_inFixList(name) || !fileExtensionService.check_total_custom()){
             return "redirect:/custom/badRequest";
         }
         fileExtensionService.save_Custom_Extension(name);
