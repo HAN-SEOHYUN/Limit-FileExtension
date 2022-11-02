@@ -40,10 +40,10 @@ public class ExtensionController {
         if(!fileExtensionService.exist_check_inFixList(name)){
             return "redirect:/custom/badRequest";
         }
-
         fileExtensionService.save_Custom_Extension(name);
         HashMap<ExtensionType, List<ResponseDto>> map = fileExtensionService.limited_Extensions();
         model.addAttribute("customList",map.get(ExtensionType.CUSTOM));
+        model.addAttribute("total", map.get(ExtensionType.CUSTOM).size());
         return "index :: #custom-list";
     }
 

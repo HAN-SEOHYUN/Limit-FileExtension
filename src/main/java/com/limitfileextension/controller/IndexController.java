@@ -25,6 +25,7 @@ public class IndexController {
        HashMap<ExtensionType, List<ResponseDto>> map = fileExtensionService.limited_Extensions();
        model.addAttribute("fixList",map.get(ExtensionType.FIX));
        model.addAttribute("customList",map.get(ExtensionType.CUSTOM));
+       model.addAttribute("total", map.get(ExtensionType.CUSTOM).size());
         return "index";
     }
 }

@@ -25,7 +25,7 @@
             <div class="fix-list-div" id ="fix-list">
                 <div class="fixex-each-div" th:each="fix : ${fixList}">
                     <label><input type="checkbox" th:value="${fix.getId()}" th:text="${fix.getName()}"
-                                  th:checked="${fix.isChecked()}"></label>
+                                  th:checked="${fix.isChecked()}" class="checkbox-list"></label>
                 </div>
             </div>
             <!--replaceWith-->
@@ -40,9 +40,9 @@
                 </div>
                 <div class="about-custom-list">
                     <div class="custom-list-div">
-                        <div class="custom-total">3/200</div>
                         <!--replaceWith-->
                         <div id="custom-list">
+                            <div class="custom-total" th:text="${total}+'/200'"></div>
                             <th:block th:each="custom : ${customList}">
                                 <div class="custom-each-div">
                                     <span th:text="${custom.getName()}" th:value="${custom.getId()}"></span>
