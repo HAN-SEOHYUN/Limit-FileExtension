@@ -51,3 +51,12 @@ input[type="text"] {
     border-radius: 9px;
     border: 1px solid #9f9b9b;
 }
+
+span#exist-alert-span {
+    font-size: 15px;
+    color: red;
+}
+
+button#submitBtn {
+    margin-right: 6px;
+}

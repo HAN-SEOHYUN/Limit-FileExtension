@@ -15,7 +15,7 @@ public class FileExtension extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id; //PK
 
     private String name; //확장자명
 
@@ -23,7 +23,7 @@ public class FileExtension extends BaseTimeEntity {
     private ExtensionType type;
 
     @Nullable
-    private boolean isChecked;
+    private boolean isChecked; //확장고정자 CHECK 여부
 
     @Builder
     public FileExtension(Long id, String name, ExtensionType type, boolean isChecked) {

@@ -5,6 +5,8 @@ import com.limitfileextension.dto.ResponseDto;
 import com.limitfileextension.service.FileExtensionService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -33,10 +35,22 @@ public class ExtensionController {
     //커스텀확장자 SAVE API
     @RequestMapping(value = "/custom/save", method = {RequestMethod.POST})
     public String custom_Extension_save(Model model, @RequestParam Map<String, Object> param){
-        fileExtensionService.save_Custom_Extension(param.get("name").toString());
+        String name = param.get("name").toString();
+
+        if(!fileExtensionService.exist_check_inFixList(name)){
+            return "redirect:/custom/badRequest";
+        }
+
+        fileExtensionService.save_Custom_Extension(name);
         HashMap<ExtensionType, List<ResponseDto>> map = fileExtensionService.limited_Extensions();
         model.addAttribute("customList",map.get(ExtensionType.CUSTOM));
         return "index :: #custom-list";
+    }
+
+    //response HttpStatus.BAD_REQUEST API
+    @GetMapping(value="/custom/badRequest")
+    public ResponseEntity badRequestMessage(@RequestParam Map<String,String> map){
+        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 
     //커스텀확장자 DELETE API

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
-    <title>서버개발자 과제테스트_한서현</title>
+    <title>과제테스트_한서현</title>
     <meta charset="UTF-8">
     <!--jquery-->
     <script th:src="@{/js/jquery-3.3.1.min.js}" type="text/javascript" text="javascript"></script>
@@ -36,7 +36,7 @@
                 <div class="about-custom-input">
                     <input type="text" placeholder="확장자 입력" id="custom-extension-input"
                            name="custom-extension-input">
-                    <button type="submit" id="submitBtn">+ 추가</button>
+                    <button type="submit" id="submitBtn">+ 추가</button> <span id="exist-alert-span"></span>
                 </div>
                 <div class="about-custom-list">
                     <div class="custom-list-div">
