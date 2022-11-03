@@ -4,10 +4,8 @@ import com.limitfileextension.domain.ExtensionType;
 import com.limitfileextension.domain.FileExtension;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Getter
-@Setter
 @NoArgsConstructor
 public class RequestDto {
 
