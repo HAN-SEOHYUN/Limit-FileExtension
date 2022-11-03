@@ -82,7 +82,7 @@ public class FileExtensionService {
         return map;
     }
 
-
+    //커스텀확장자 삭제 메서드
     @Transactional
     public void delete_custom_extension(Long id){
         fileExtensionRepository.deleteById(id);

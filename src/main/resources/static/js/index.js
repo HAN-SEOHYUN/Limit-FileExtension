@@ -6,6 +6,13 @@ $(function () {
         var data = {
             name: $("#custom-extension-input").val()
         }
+
+        if (!check_text(data.name)) {
+            alert("올바른 확장자를 입력하세요");
+            refresh();
+            return false;
+        }
+
         $.ajax({
             cache: false,
             url: '/extension/custom/save',
@@ -13,11 +20,10 @@ $(function () {
             data: data,
             success: function (fragment) {
                 $('#custom-list').replaceWith(fragment);
-                $("#custom-extension-input").val("");
-                $("#exist-alert-span").text("");
+                refresh();
             },
             error: function (error) {
-                $("#exist-alert-span").text("등록불가");
+                $("#exist-alert-span").text("등록된 확장자입니다");
                 $("#custom-extension-input").val("");
             }
         });
@@ -39,8 +45,21 @@ $(function () {
         })
             .done(function (fragment) {
                 $('#fix-list').replaceWith(fragment);
-                $("#exist-alert-span").text("");
+                refresh();
             });
     });
 
+
+    //입력된 글자가
+    //한글, 공백, 특수문자를 포함하면 false 리턴
+    function check_text(extension) {
+        const regex = /[^?a-zA-Z0-9/]/;
+        return !(extension.length > 20 || regex.test(extension));
+    }
+
+    //입력란과 오류메세지를 clean 해줌
+    function refresh() {
+        $("#custom-extension-input").val("");
+        $("#exist-alert-span").text("");
+    }
 });
