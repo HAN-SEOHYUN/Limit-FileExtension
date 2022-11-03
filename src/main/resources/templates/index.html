@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/css/main.css" type="text/css">
 </head>
 <body>
-<div class="content-wrapper">
+<div class="content-wrapper" style="margin: 80px;">
     <hr>
     <div class="content-top">
         <div class="title-div"><h1>◎ 파일 확장자 차단</h1></div>
@@ -46,7 +46,7 @@
                             <th:block th:each="custom : ${customList}">
                                 <div class="custom-each-div">
                                     <span th:text="${custom.getName()}" th:value="${custom.getId()}"></span>
-                                    <a th:href="@{'/extension/custom/delete/'+${custom.getId()}}" id='delBtn' th:onclick ="return confirm('삭제하시겠습니까 ?');">
+                                    <a th:href="@{'/extension/custom/delete/'+${custom.getId()}}" id='delBtn' th:onclick ="return confirm('삭제하시겠습니까 ?');" style="color: black;">
                                         <i class="fa-solid fa-x"></i></a>
                                 </div>
                             </th:block>
