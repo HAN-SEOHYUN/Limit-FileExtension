@@ -18,9 +18,6 @@ import javax.transaction.Transactional;
 @Transactional
 class FileExtensionServiceTest {
 
-    //서버 배포를 위한 빌드과정에서 build failed 되어 테스트코드 주석처리
-
-
     @Autowired
     private FileExtensionService fileExtensionService;
 
