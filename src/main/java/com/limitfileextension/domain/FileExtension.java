@@ -4,7 +4,6 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 
@@ -20,10 +19,9 @@ public class FileExtension {
     private String name; //확장자명
 
     @Enumerated(EnumType.STRING)
-    private ExtensionType type;
+    private ExtensionType type; //고정 or 커스텀확장자
 
-    @Nullable
-    private boolean isChecked; //확장고정자 CHECK 여부
+    private boolean isChecked; //고정확장자 CHECK 여부
 
     @Builder
     public FileExtension(Long id, String name, ExtensionType type, boolean isChecked) {

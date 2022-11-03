@@ -59,7 +59,6 @@ public class FileExtensionService {
         return listHashMap.get(ExtensionType.CUSTOM).size() <= 200;
     }
 
-
     //확장자 제한 정보를 조회하는 메서드
     //고정, 커스텀 확장자 데이터를 각 List에 담아 map으로 리턴합니다 (PK 오름차순)
     @Transactional
