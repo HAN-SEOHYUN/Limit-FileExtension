@@ -24,13 +24,12 @@ $(function () {
             },
             error: function (error) {
                 $("#exist-alert-span").text("등록된 확장자입니다");
-                $("#custom-extension-input").val("");
             }
         });
     });
 
     //checkbox 상태 변경 시
-    //상태 db저장
+    //checkbox 클릭 여부 정보를 db에 저장
     $('input[type=checkbox]').change(function () {
         var data = {
             id: $(this).val(),
@@ -49,7 +48,6 @@ $(function () {
             });
     });
 
-
     //입력된 글자가
     //한글, 공백, 특수문자를 포함하면 false 리턴
     function check_text(extension) {
@@ -57,9 +55,10 @@ $(function () {
         return !(extension.length > 20 || regex.test(extension));
     }
 
-    //입력란과 오류메세지를 clean 해줌
+    //입력란 & 오류메세지 초기화
     function refresh() {
         $("#custom-extension-input").val("");
+        $("#custom-extension-input").focus();
         $("#exist-alert-span").text("");
     }
 });

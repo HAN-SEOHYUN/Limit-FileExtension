@@ -2,13 +2,9 @@ package com.limitfileextension.dto;
 
 import com.limitfileextension.domain.ExtensionType;
 import com.limitfileextension.domain.FileExtension;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.lang.Nullable;
-
-import javax.persistence.*;
 
 @Getter
 @Setter

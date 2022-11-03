@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
-public class FileExtension extends BaseTimeEntity {
+public class FileExtension {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
