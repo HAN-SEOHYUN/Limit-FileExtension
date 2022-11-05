@@ -1,6 +1,7 @@
 <h2>파일 확장자 차단 (Spring boot + Ajax)</h2>
 <h4>스프링부트를 이용해 파일 확장자를 차단하는 페이지를 구현했습니다.</h4>
 <h5>링크에서 확인 가능합니다-> <a href ="http://52.7.156.49/">http://52.7.156.49/</a></h5>
+<h5><a href ="https://feelfreetothink.tistory.com/136">엔티티 설계의도, DTO와 Ajax 선택이유, 어려웠던점 & 아쉬운점</a></h5>
 <hr>
 
 <h3>Dependency</h3>
